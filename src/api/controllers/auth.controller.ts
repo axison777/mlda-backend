@@ -33,3 +33,10 @@ export const login = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'An error occurred during login', error: error.message });
   }
 };
+
+// --- Contrôleur pour la déconnexion ---
+export const logout = (req: Request, res: Response) => {
+  // Pour une authentification JWT stateless, la déconnexion est gérée côté client
+  // en supprimant le token. Ce point de terminaison est là pour la sémantique.
+  res.status(200).json({ message: 'Successfully logged out' });
+};

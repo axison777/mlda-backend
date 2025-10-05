@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { register, login } from '../controllers/auth.controller';
+import { register, login, logout } from '../controllers/auth.controller';
 import * as profileController from '../controllers/profile.controller';
 import { validate } from '../middlewares/validation.middleware';
 import { registerSchema, loginSchema } from '../validations/auth.validation';
@@ -63,6 +63,23 @@ router.post('/register', validate(registerSchema), register);
  *         description: Email ou mot de passe invalide
  */
 router.post('/login', validate(loginSchema), login);
+
+/**
+ * @swagger
+ * /auth/logout:
+ *   post:
+ *     summary: Déconnecte l'utilisateur actuel
+ *     tags: [Auth]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Déconnexion réussie
+ *       401:
+ *         description: Non autorisé
+ */
+router.post('/logout', authenticateToken, logout);
+
 
 // --- Routes de profil utilisateur (sous /auth) ---
 
