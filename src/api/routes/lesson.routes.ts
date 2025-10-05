@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import * as lessonController from '@/api/controllers/lesson.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
+import * as lessonController from '../controllers/lesson.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
 import {
   createLessonSchema,
   updateLessonSchema,
   lessonIdParamSchema,
   courseIdParamSchema
-} from '@/api/validations/lesson.validation';
+} from '../validations/lesson.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

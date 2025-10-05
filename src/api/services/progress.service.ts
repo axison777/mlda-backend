@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { LessonProgress, Prisma } from '@prisma/client';
 import { awardAchievementToUser } from './achievement.service';
 

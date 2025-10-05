@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as paymentController from '@/api/controllers/payment.controller';
-import { authenticateToken } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { createPaymentSchema } from '@/api/validations/payment.validation';
+import * as paymentController from '../controllers/payment.controller';
+import { authenticateToken } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { createPaymentSchema } from '../validations/payment.validation';
 
 const router = Router();
 

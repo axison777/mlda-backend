@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as courseService from '@/api/services/course.service';
+import * as courseService from '../services/course.service';
 import { UserRole } from '@prisma/client';
 
 // Étend l'interface Request pour inclure notre propriété 'user'

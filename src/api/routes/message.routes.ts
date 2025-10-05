@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as messageController from '@/api/controllers/message.controller';
-import { authenticateToken } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { sendMessageSchema, conversationParamsSchema } from '@/api/validations/message.validation';
+import * as messageController from '../controllers/message.controller';
+import { authenticateToken } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { sendMessageSchema, conversationParamsSchema } from '../validations/message.validation';
 
 const router = Router();
 

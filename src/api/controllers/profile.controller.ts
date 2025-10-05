@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import * as profileService from '@/api/services/profile.service';
-import * as userService from '@/api/services/user.service';
+import * as profileService from '../services/profile.service';
+import * as userService from '../services/user.service';
 import { UserRole } from '@prisma/client';
 
 // Étend l'interface Request pour inclure notre propriété 'user'

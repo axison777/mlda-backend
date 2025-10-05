@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as userService from '@/api/services/user.service';
+import * as userService from '../services/user.service';
 
 // --- Contrôleur pour récupérer tous les utilisateurs ---
 export const getAll = async (req: Request, res: Response) => {

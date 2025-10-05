@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, Payment } from '@prisma/client';
 
 // Type pour les articles du panier envoyés par le frontend
@@ -47,6 +47,7 @@ export const createPayment = async (userId: string, cart: CartItem[]): Promise<P
       data: {
         amount: totalAmount,
         status: 'PENDING', // Le statut initial est en attente
+        provider: 'system', // Fournisseur de paiement par défaut
         user: { connect: { id: userId } },
         items: {
           createMany: {

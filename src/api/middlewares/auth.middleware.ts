@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { UserRole } from '@prisma/client';
 
 // Étend l'interface Request d'Express pour inclure notre propriété 'user'

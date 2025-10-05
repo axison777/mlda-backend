@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, Product } from '@prisma/client';
 
 // --- Service pour créer un produit ---
@@ -20,12 +20,12 @@ export const findAllProducts = async (params: {
 
   const where: Prisma.ProductWhereInput = {};
 
-  if (category) where.category = { equals: category, mode: 'insensitive' };
+  if (category) where.category = { equals: category };
   if (active !== undefined) where.active = active;
   if (search) {
     where.OR = [
-      { name: { contains: search, mode: 'insensitive' } },
-      { description: { contains: search, mode: 'insensitive' } },
+      { name: { contains: search } },
+      { description: { contains: search } },
     ];
   }
 

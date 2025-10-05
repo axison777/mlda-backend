@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import * as announcementController from '@/api/controllers/announcement.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
+import * as announcementController from '../controllers/announcement.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
 import {
   createAnnouncementSchema,
   updateAnnouncementSchema,
   announcementIdParamSchema
-} from '@/api/validations/announcement.validation';
+} from '../validations/announcement.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as campaignService from '@/api/services/campaign.service';
+import * as campaignService from '../services/campaign.service';
 
 // --- Contrôleur pour créer une campagne ---
 export const create = async (req: Request, res: Response) => {

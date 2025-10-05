@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as announcementService from '@/api/services/announcement.service';
+import * as announcementService from '../services/announcement.service';
 import { UserRole } from '@prisma/client';
 
 interface AuthenticatedRequest extends Request {

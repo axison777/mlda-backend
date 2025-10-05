@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, Announcement } from '@prisma/client';
 
 // --- Service pour créer une annonce ---

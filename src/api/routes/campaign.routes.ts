@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import * as campaignController from '@/api/controllers/campaign.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
+import * as campaignController from '../controllers/campaign.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
 import {
   createCampaignSchema,
   updateCampaignSchema,
   campaignIdParamSchema
-} from '@/api/validations/campaign.validation';
+} from '../validations/campaign.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

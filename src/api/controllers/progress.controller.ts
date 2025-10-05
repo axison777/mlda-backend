@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as progressService from '@/api/services/progress.service';
+import * as progressService from '../services/progress.service';
 import { UserRole } from '@prisma/client';
 
 // Étend l'interface Request pour inclure notre propriété 'user'

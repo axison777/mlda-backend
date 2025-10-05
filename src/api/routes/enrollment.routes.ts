@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as enrollmentController from '@/api/controllers/enrollment.controller';
-import { authenticateToken } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { enrollSchema } from '@/api/validations/enrollment.validation';
+import * as enrollmentController from '../controllers/enrollment.controller';
+import { authenticateToken } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { enrollSchema } from '../validations/enrollment.validation';
 
 const router = Router();
 

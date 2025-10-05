@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import * as statsController from '@/api/controllers/stats.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
+import * as statsController from '../controllers/stats.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

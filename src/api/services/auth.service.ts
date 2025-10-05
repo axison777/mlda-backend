@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -48,14 +48,21 @@ export const loginUser = async (credentials: Pick<Prisma.UserCreateInput, 'email
     throw new Error('Invalid email or password');
   }
 
-  // 3. Générer le token JWT
+  // 3. S'assurer que la clé secrète JWT est définie
+  const jwtSecret = process.env.JWT_SECRET;
+  if (!jwtSecret) {
+    console.error("JWT_SECRET is not defined in the environment variables.");
+    // Ne pas exposer les détails de l'erreur interne au client
+    throw new Error("Authentication configuration error.");
+  }
+
+  // 4. Générer le token JWT
   const token = jwt.sign(
     { userId: user.id, role: user.role },
-    process.env.JWT_SECRET as string,
-    { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
+    jwtSecret
   );
 
-  // 4. Retirer le mot de passe et retourner l'utilisateur et le token
+  // 5. Retirer le mot de passe et retourner l'utilisateur et le token
   const { password, ...userWithoutPassword } = user;
   return { user: userWithoutPassword, token };
 };

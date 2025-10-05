@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, Course } from '@prisma/client';
 
 // --- Service pour créer un cours ---
@@ -36,8 +36,8 @@ export const findAllCourses = async (params: {
   if (featured !== undefined) where.featured = featured;
   if (search) {
     where.OR = [
-      { title: { contains: search, mode: 'insensitive' } },
-      { description: { contains: search, mode: 'insensitive' } },
+      { title: { contains: search } },
+      { description: { contains: search } },
     ];
   }
 

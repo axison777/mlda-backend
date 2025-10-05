@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as profileController from '@/api/controllers/profile.controller';
-import { authenticateToken } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { updateProfileSchema, publicProfileParamsSchema } from '@/api/validations/profile.validation';
+import * as profileController from '../controllers/profile.controller';
+import { authenticateToken } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { updateProfileSchema, publicProfileParamsSchema } from '../validations/profile.validation';
 
 const router = Router();
 
