@@ -72,6 +72,41 @@ const options: swaggerJsdoc.Options = {
               active: { type: 'boolean' },
             },
         },
+        Choice: {
+          type: 'object',
+          required: ['text', 'isCorrect'],
+          properties: {
+            text: { type: 'string', description: 'Le texte du choix de réponse' },
+            isCorrect: { type: 'boolean', description: 'Indique si c\'est la bonne réponse' },
+          },
+        },
+        Question: {
+          type: 'object',
+          required: ['text', 'choices'],
+          properties: {
+            text: { type: 'string', description: 'La question elle-même' },
+            choices: {
+              type: 'array',
+              items: { $ref: '#/components/schemas/Choice' },
+              minItems: 2,
+              description: 'Liste des choix de réponse pour la question'
+            },
+          },
+        },
+        Quiz: {
+          type: 'object',
+          required: ['title', 'lessonId', 'questions'],
+          properties: {
+            title: { type: 'string', description: 'Le titre du quiz' },
+            lessonId: { type: 'string', format: 'cuid', description: 'ID de la leçon associée' },
+            questions: {
+              type: 'array',
+              items: { $ref: '#/components/schemas/Question' },
+              minItems: 1,
+              description: 'Liste des questions du quiz'
+            },
+          },
+        },
         // --- Schémas pour les requêtes ---
         LoginRequest: {
             type: 'object',
