@@ -5,7 +5,7 @@ export const updateLessonProgressSchema = z.object({
     lessonId: z.string().cuid('Invalid lesson ID'),
   }),
   body: z.object({
-    completed: z.boolean({ required_error: 'The "completed" field is required' }),
+    completed: z.boolean(),
     timeSpent: z.number().int().positive().optional(),
   }),
 });

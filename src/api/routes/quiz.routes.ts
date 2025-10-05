@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as quizController from '@/api/controllers/quiz.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { createQuizSchema, submitAttemptSchema, quizIdParamSchema } from '@/api/validations/quiz.validation';
+import * as quizController from '../controllers/quiz.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { createQuizSchema, submitAttemptSchema, quizIdParamSchema } from '../validations/quiz.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

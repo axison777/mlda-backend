@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, Profile } from '@prisma/client';
 
 // --- Service pour récupérer le profil d'un utilisateur ---

@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as userController from '@/api/controllers/user.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { updateUserSchema, userIdParamSchema } from '@/api/validations/user.validation';
+import * as userController from '../controllers/user.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { updateUserSchema, userIdParamSchema } from '../validations/user.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

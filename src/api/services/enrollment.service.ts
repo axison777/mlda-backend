@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Enrollment, Prisma } from '@prisma/client';
 
 // --- Service pour inscrire un étudiant à un cours ---

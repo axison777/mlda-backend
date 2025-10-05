@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import * as achievementController from '@/api/controllers/achievement.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
+import * as achievementController from '../controllers/achievement.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
 import {
   createAchievementSchema,
   updateAchievementSchema,
   achievementIdParamSchema
-} from '@/api/validations/achievement.validation';
+} from '../validations/achievement.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

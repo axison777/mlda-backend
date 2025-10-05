@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { UserRole, PaymentStatus } from '@prisma/client';
 
 // --- Service pour les statistiques de l'Administrateur ---

@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, User, UserRole } from '@prisma/client';
 
 // --- Service pour récupérer tous les utilisateurs (avec filtres et pagination) ---
@@ -16,9 +16,9 @@ export const findAllUsers = async (params: {
   if (role) where.role = role;
   if (search) {
     where.OR = [
-      { firstName: { contains: search, mode: 'insensitive' } },
-      { lastName: { contains: search, mode: 'insensitive' } },
-      { email: { contains: search, mode: 'insensitive' } },
+      { firstName: { contains: search } },
+      { lastName: { contains: search } },
+      { email: { contains: search } },
     ];
   }
 

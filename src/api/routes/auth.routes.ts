@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { register, login } from '@/api/controllers/auth.controller';
-import * as profileController from '@/api/controllers/profile.controller';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { registerSchema, loginSchema } from '@/api/validations/auth.validation';
-import { updateProfileSchema } from '@/api/validations/profile.validation';
-import { authenticateToken } from '@/api/middlewares/auth.middleware';
+import { register, login } from '../controllers/auth.controller';
+import * as profileController from '../controllers/profile.controller';
+import { validate } from '../middlewares/validation.middleware';
+import { registerSchema, loginSchema } from '../validations/auth.validation';
+import { updateProfileSchema } from '../validations/profile.validation';
+import { authenticateToken } from '../middlewares/auth.middleware';
 
 const router = Router();
 

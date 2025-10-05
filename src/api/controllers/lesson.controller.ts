@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as lessonService from '@/api/services/lesson.service';
+import * as lessonService from '../services/lesson.service';
 
 // --- Contrôleur pour créer une leçon ---
 export const create = async (req: Request, res: Response) => {

@@ -4,8 +4,8 @@ import { CampaignStatus } from '@prisma/client';
 export const createCampaignSchema = z.object({
   body: z.object({
     name: z.string().min(1, 'Campaign name is required'),
-    startDate: z.coerce.date({ errorMap: () => ({ message: "Invalid start date"}) }),
-    endDate: z.coerce.date({ errorMap: () => ({ message: "Invalid end date"}) }),
+    startDate: z.coerce.date({ message: "Invalid start date" }),
+    endDate: z.coerce.date({ message: "Invalid end date" }),
     budget: z.number().positive('Budget must be a positive number'),
     status: z.nativeEnum(CampaignStatus).optional(),
   }),

@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import * as productController from '@/api/controllers/product.controller';
-import { authenticateToken, authorizeRoles } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
+import * as productController from '../controllers/product.controller';
+import { authenticateToken, authorizeRoles } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
 import {
   createProductSchema,
   updateProductSchema,
   productIdParamSchema
-} from '@/api/validations/product.validation';
+} from '../validations/product.validation';
 import { UserRole } from '@prisma/client';
 
 const router = Router();

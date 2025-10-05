@@ -2,9 +2,7 @@ import { z } from 'zod';
 
 const cartItemSchema = z.object({
   id: z.string().cuid('Each cart item must have a valid CUID'),
-  type: z.enum(['COURSE', 'PRODUCT'], {
-    errorMap: () => ({ message: "Item type must be 'COURSE' or 'PRODUCT'" }),
-  }),
+  type: z.enum(['COURSE', 'PRODUCT']),
   quantity: z.number().int().positive('Quantity must be a positive integer'),
 });
 

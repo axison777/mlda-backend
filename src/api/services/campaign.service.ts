@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import prisma from '../../lib/prisma';
 import { Prisma, Campaign } from '@prisma/client';
 
 // --- Service pour créer une campagne ---

@@ -5,7 +5,7 @@ export const createCourseSchema = z.object({
   body: z.object({
     title: z.string().min(1, 'Title is required'),
     description: z.string().min(1, 'Description is required'),
-    level: z.nativeEnum(CourseLevel, { errorMap: () => ({ message: 'Invalid course level' }) }),
+    level: z.nativeEnum(CourseLevel),
     price: z.number().positive('Price must be a positive number'),
     status: z.nativeEnum(PublishStatus).optional(),
     featured: z.boolean().optional(),

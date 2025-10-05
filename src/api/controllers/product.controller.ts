@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as productService from '@/api/services/product.service';
+import * as productService from '../services/product.service';
 
 // --- Contrôleur pour créer un produit ---
 export const create = async (req: Request, res: Response) => {

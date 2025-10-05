@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as paymentService from '@/api/services/payment.service';
+import * as paymentService from '../services/payment.service';
 import { UserRole } from '@prisma/client';
 
 interface AuthenticatedRequest extends Request {

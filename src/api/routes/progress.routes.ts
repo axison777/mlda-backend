@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import * as progressController from '@/api/controllers/progress.controller';
-import { authenticateToken } from '@/api/middlewares/auth.middleware';
-import { validate } from '@/api/middlewares/validation.middleware';
-import { updateLessonProgressSchema, getCourseProgressSchema } from '@/api/validations/progress.validation';
+import * as progressController from '../controllers/progress.controller';
+import { authenticateToken } from '../middlewares/auth.middleware';
+import { validate } from '../middlewares/validation.middleware';
+import { updateLessonProgressSchema, getCourseProgressSchema } from '../validations/progress.validation';
 
 const router = Router();
 

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import * as achievementService from '@/api/services/achievement.service';
+import * as achievementService from '../services/achievement.service';
 
 // --- Contrôleur pour créer un succès ---
 export const create = async (req: Request, res: Response) => {
